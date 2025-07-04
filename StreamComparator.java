@@ -1,8 +1,8 @@
 import java.util.Comparator;
 
-public class StreamComparator implements Comparator<Поток> {
+public class StreamComparator implements Comparator<Stream> {
     @Override
-    public int compare(Поток p1, Поток p2) {
-        return Integer.compare(p1.getГруппы().size(), p2.getГруппы().size());
+    public int compare(Stream s1, Stream s2) {
+        return Integer.compare(s1.getGroups().size(), s2.getGroups().size());
     }
 }

@@ -1,19 +1,19 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        УчебнаяГруппа г1 = new УчебнаяГруппа("QA-01");
-        УчебнаяГруппа г2 = new УчебнаяГруппа("QA-02");
-        УчебнаяГруппа г3 = new УчебнаяГруппа("QA-03");
+        StudyGroup group1 = new StudyGroup("QA-01");
+        StudyGroup group2 = new StudyGroup("QA-02");
+        StudyGroup group3 = new StudyGroup("QA-03");
 
-        Поток p1 = new Поток("Утро", List.of(г1, г2));
-        Поток p2 = new Поток("Вечер", List.of(г3));
-        Поток p3 = new Поток("День", List.of());
+        Stream stream1 = new Stream("Morning", List.of(group1, group2));
+        Stream stream2 = new Stream("Evening", List.of(group3));
+        Stream stream3 = new Stream("Afternoon", List.of());
 
-        List<Поток> потоки = new java.util.ArrayList<>(List.of(p1, p2, p3));
+        List<Stream> streams = new ArrayList<>(List.of(stream1, stream2, stream3));
 
-
-        Контроллер контроллер = new Контроллер(new ПотокСервис());
-        контроллер.отсортироватьИВывести(потоки);
+        Controller controller = new Controller(new StreamService());
+        controller.sortAndPrint(streams);
     }
 }
